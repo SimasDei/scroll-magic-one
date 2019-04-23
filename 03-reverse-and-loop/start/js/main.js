@@ -1,45 +1,43 @@
-$(document).ready(function(){
+$(document).ready(function() {
+  // Init Scroll Magic
+  var controller = new ScrollMagic.Controller();
 
-	// Init Scroll Magic
-	var controller = new ScrollMagic.Controller();
+  var ourScene = new ScrollMagic.Scene({
+    triggerElement: "#project01 img",
+    triggerHook: 0.9
+  })
+    .setClassToggle("#project01", "fade-in")
+    .addIndicators({
+      name: "fade scene",
+      colorTrigger: "black",
+      colorStart: "#75C695",
+      colorEnd: "pink"
+    })
+    .addTo(controller);
 
-	// loop through each .project element
-	$('.project').each(function() {
-		console.log(this);
+  var ourScene2 = new ScrollMagic.Scene({
+    triggerElement: "#project02 img",
+    triggerHook: 0.9
+  })
+    .setClassToggle("#project02", "fade-in")
+    .addIndicators({
+      name: "fade scene 2",
+      colorTrigger: "black",
+      colorStart: "#75C695",
+      colorEnd: "pink"
+    })
+    .addTo(controller);
 
-		// build a scene
-
-		var ourScene = new ScrollMagic.Scene({
-			triggerElement: this.children[0],
-			triggerHook: 0.9
-		})
-		.setClasstoggle(this, 'fade-in') // add class to project 01
-		.addIndicators({
-			name: 'fade scene',
-			colorTrigger: 'black',
-			colorStart: '#75c695',
-			colorEnd: 'pink'
-		}) // This requires a plugin
-		.addTo(controller)
-	})
-	
-
+  var ourScene3 = new ScrollMagic.Scene({
+    triggerElement: "#project03 img",
+    triggerHook: 0.9
+  })
+    .setClassToggle("#project03", "fade-in")
+    .addIndicators({
+      name: "fade scene 3",
+      colorTrigger: "black",
+      colorStart: "#75C695",
+      colorEnd: "pink"
+    })
+    .addTo(controller);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
