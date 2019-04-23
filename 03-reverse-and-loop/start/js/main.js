@@ -1,26 +1,28 @@
 $(document).ready(function(){
 
-	// Init ScrollMagic
+	// Init Scroll Magic
 	var controller = new ScrollMagic.Controller();
 
 	// loop through each .project element
-	$('.project').each(function(){
+	$('.project').each(function() {
+		console.log(this);
+
 		// build a scene
+
 		var ourScene = new ScrollMagic.Scene({
-		triggerElement: this.children[0], // target first child element of .project
-		triggerHook: 0.9,
-		reverse: false // makes animation go only once
+			triggerElement: this.children[0],
+			triggerHook: 0.9
+		})
+		.setClasstoggle(this, 'fade-in') // add class to project 01
+		.addIndicators({
+			name: 'fade scene',
+			colorTrigger: 'black',
+			colorStart: '#75c695',
+			colorEnd: 'pink'
+		}) // This requires a plugin
+		.addTo(controller)
 	})
-	.setClassToggle(this, 'fade-in') // add class to project01
-	.addIndicators({
-		name: 'fade scene',
-		colorTrigger: 'black',
-		indent: 200,
-		colorStart: 'darkgreen',
-		colorEnd: 'darkblue'
-	}) // this requires a plugin
-	.addTo(controller);
-	});
+	
 
 });
 
